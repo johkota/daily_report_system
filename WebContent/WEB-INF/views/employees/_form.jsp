@@ -14,7 +14,7 @@
 <br /><br />
 
 <label for="name">氏名</label><br />
-<input type="password" name="password" />
+<input type="text" name="name" />
 <br /><br />
 
 <label for="password">パスワード</label><br />

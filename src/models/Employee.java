@@ -26,7 +26,7 @@ import javax.persistence.Table;
 		query = "SELECT COUNT(e)FROM Employee AS e WHERE e.code = :code"
 	),
 	@NamedQuery(
-		name = "checkReginCodeAndPassword",
+		name = "checkLoginCodeAndPassword",
 		query = "SELECT e FROM Employee AS e WHERE e.delete_flag = 0 AND e.code = :code AND e.password = :pass"
 	)
 })
@@ -49,7 +49,7 @@ public class Employee {
 	@Column(name = "admin_flag", nullable = false)
 	private Integer admin_flag;
 
-	@Column(name = "create_at", nullable = false)
+	@Column(name = "created_at", nullable = false)
 	private Timestamp created_at;
 
 	@Column(name = "updated_at", nullable = false)
@@ -97,12 +97,12 @@ public class Employee {
 		this.admin_flag = admin_flag;
 	}
 
-	public Timestamp getCreate_at() {
+	public Timestamp getCreated_at() {
 		return created_at;
 	}
 
-	public void setCreate_at(Timestamp create_at) {
-		this.created_at = create_at;
+	public void setCreated_at(Timestamp created_at) {
+		this.created_at = created_at;
 	}
 
 	public Timestamp getUpdated_at() {
