@@ -19,9 +19,7 @@
                         </tr>
                         <tr>
                             <th>内容</th>
-                            <td>
-                                <pre><c:out value="${report.content}" /></pre>
-                            </td>
+                            <td><pre><c:out value="${report.content}" /></pre></td>
                         </tr>
                         <tr>
                             <th>登録日時</th>
@@ -35,8 +33,18 @@
                                 <fmt:formatDate value="${report.updated_at}" pattern="yyyy-MM-dd HH:mm:ss" />
                             </td>
                         </tr>
+                        <tr>
+                        	<th>いいね！数</th>
+                        	<td>
+                        		<c:out value="${report.likes}" />
+                        	</td>
+                        </tr>
                     </tbody>
                 </table>
+                <br>
+    				<form method="POST" action="<c:url value='/likes/create' />">
+    					<button type="submit" name="likes" value="${1}">いいね！</button>
+   					</form>
 
                 <c:if test="${sessionScope.login_employee.id == report.employee.id}">
                     <p><a href="<c:url value="/reports/edit?id=${report.id}" />">この日報を編集する</a></p>

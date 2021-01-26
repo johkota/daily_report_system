@@ -14,6 +14,7 @@
 					<th>社員番号</th>
 					<th>氏名</th>
 					<th>操作</th>
+
 				</tr>
 				<c:forEach var="employee" items="${employees}" varStatus="status">
 					<tr class="row${status.count % 2}">
